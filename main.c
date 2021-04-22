@@ -14,6 +14,7 @@ int main(){
 
 	do{
 		//MENU
+        printf("TESTE");
         printf("-----------------------------TRABALHO 1 - PAA---------------------------------\n");	    
         printf("|                PROGRAMA LabirintScape: Opcoes do programa:                  |\n");
         printf("|                1) Carregar novo arquivo de dados.                           |\n");

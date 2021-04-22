@@ -40,15 +40,17 @@ int lerArquivo(TipoLabirinto *labirinto, char *nomeArquivo){
         while (!feof(arquivo)) { 
             for (i = 0; i < labirinto->qtdLinhas; i++) { 
                 for (j = 0; j < labirinto->qtdColunas; j++) {
-                    
-                    fscanf(arquivo, "%s ", &cor); 
-                    if(cor = 'F')
-                        labirinto->posicionamento[i][j] = 0; // 1 para posicao F
-                    if(cor = 'I')
-                        labirinto->posicionamento[i][j] = 1; // 1 para posicao F                       
-                    printf("%s\n", cor);
-                    //labirinto->posicionamento[i][j] = (int)cor; //preenche o labirinto
-                    //printf("%c\n", labirinto->posicionamento[i][j]);
+                    fscanf(arquivo, "%s ", string); 
+                    if(strcmp(string,"F"))
+                        labirinto->posicionamento[i][j] = '0'; // 1 para posicao F
+                    if(strcmp(string,"I"))
+                        labirinto->posicionamento[i][j] = '1'; // 1 para posicao I                     
+                    if(!strcmp(string,"I") && !(strcmp(string,"F"))){
+                        labirinto->posicionamento[i][j] = *string;
+                       
+                    }
+                     //printf("%s\n", &labirinto->posicionamento[i][j]);  
+                         //preenche o labirinto
                 }
             }
         }
